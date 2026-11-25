@@ -1,4 +1,4 @@
-const DIARY_DATA_URL = "https://raw.githubusercontent.com/sndaaasanada/vs-/refs/heads/main/markup4/pub2/diarie.json?token=GHSAT0AAAAAAER5YBNLKMVPZBYZS3WB32VK2YG6M7A"
+const DIARY_DATA_URL = "https://raw.githubusercontent.com/sndaaasanada/website_saspk.net/refs/heads/main/diarie.json"
 
 const dateList = document.getElementById("date-list")
 const diaryList = document.getElementById("diary-list")

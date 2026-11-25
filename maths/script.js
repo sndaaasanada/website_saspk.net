@@ -1,4 +1,4 @@
-const MATHS_DATA_URL = "https://raw.githubusercontent.com/sndaaasanada/vs-/refs/heads/main/markup4/pub2/content.json?token=GHSAT0AAAAAAER5YBNL2SCKLTGAQ3RYY5PQ2YG6IHQ"
+const MATHS_DATA_URL = "https://raw.githubusercontent.com/sndaaasanada/website_saspk.net/refs/heads/main/content.json"
 
 const mathIndex = document.getElementById("math-index")
 const mathList = document.getElementById("math-list")

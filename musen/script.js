@@ -1,4 +1,4 @@
-const CONTEST_DATA_URL = "https://raw.githubusercontent.com/sndaaasanada/vs-/refs/heads/main/markup4/pub2/musen.json?token=GHSAT0AAAAAAER5YBNKKUJCTUFARHX2DBJ62YG6OIA"
+const CONTEST_DATA_URL = "https://raw.githubusercontent.com/sndaaasanada/website_saspk.net/refs/heads/main/musen.json"
 
 const contestIndex = document.getElementById("contest-index")
 const contestList = document.getElementById("contest-list")
