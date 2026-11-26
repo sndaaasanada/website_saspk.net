@@ -14,6 +14,29 @@ function formatDate(date) {
     return date.replace(/-/g, ".")
 }
 
+function createDiaryContent(content) {
+    const fragment = document.createDocumentFragment()
+    const markerPattern = /&([^&]*)&|<br\s*\/?>/gi
+    let lastIndex = 0
+    let match
+
+    while ((match = markerPattern.exec(content)) !== null) {
+        fragment.append(document.createTextNode(content.slice(lastIndex, match.index)))
+        if (match[1] === undefined) {
+            fragment.append(document.createElement("br"))
+        } else {
+            const marker = match[1].trim()
+            const markerLength = /^\d+$/.test(marker) ? Number(marker) : Array.from(marker).length
+            const redactionLength = Number.isSafeInteger(markerLength) ? Math.max(markerLength, 1) : 1
+            fragment.append(document.createTextNode("■".repeat(redactionLength)))
+        }
+        lastIndex = markerPattern.lastIndex
+    }
+
+    fragment.append(document.createTextNode(content.slice(lastIndex)))
+    return fragment
+}
+
 function createDateLink(date) {
     const item = document.createElement("li")
     const link = document.createElement("a")
@@ -43,7 +66,7 @@ function createDiaryEntry(date, content) {
     time.textContent = formatDate(date)
     heading.append(time)
     text.className = "diary-entry-content"
-    text.textContent = content
+    text.append(createDiaryContent(content))
     article.append(heading, text)
     return article
 }

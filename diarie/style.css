@@ -29,10 +29,25 @@
   letter-spacing: .12em;
 }
 
+.diary-title {
+  position: relative;
+  width: fit-content;
+}
+
 .diary-heading h1 {
   margin: 0;
   font-size: clamp(1.7rem, 3vw, 2.2rem);
   letter-spacing: -.04em;
+}
+
+.diary-redaction-note {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  margin: 0 0 0 6px;
+  color: var(--muted);
+  font-size: .75rem;
+  white-space: nowrap;
 }
 
 .diary-status {
